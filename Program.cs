@@ -325,6 +325,27 @@
 //}
 
 // 5. WAP to find missing elements from the array?
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = new int[] { 1, 2, 3, 5, 6 };
+//            int n = array.Length + 1;
+//            int ExpectedSum = n * (n + 1) / 2;
+//            int currentSum = 0;
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                currentSum += array[i];
+//            }
+//            Console.WriteLine(ExpectedSum - currentSum);
+//        }
+//    }
+//}
+
+// 6. WAP to find the given string is Palindrome or not.
 using System;
 namespace logicals
 {
@@ -332,15 +353,32 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int[] array = new int[] { 1, 2, 3, 5, 6 };
-            int n = array.Length + 1;
-            int ExpectedSum = n * (n + 1) / 2;
-            int currentSum = 0;
-            for (int i = 0; i < array.Length; i++)
+            string str = "abba";
+            if (isPalindrome(str))
             {
-                currentSum += array[i];
+                Console.WriteLine("Palindrome");
             }
-            Console.WriteLine(ExpectedSum - currentSum);
+            else
+            {
+                Console.WriteLine("Not Palindrome");
+            }
+
+        }
+
+        static bool isPalindrome(string str)
+        {
+            int left = 0;
+            int right = str.Length - 1;
+            while (left < right)
+            {
+                if (str[left] != str[right])
+                {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;
         }
     }
 }
