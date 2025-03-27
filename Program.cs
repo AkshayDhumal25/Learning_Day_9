@@ -506,30 +506,172 @@
 
 
 // Method Hiding 
+//using System;
+//namespace methodHiding
+//{
+
+//    class Base
+//    {
+//        public void Print()
+//        {
+//            Console.WriteLine("Class A");
+//        }
+//    }
+//    class Child : Base
+//    {
+//        public new void Print()
+//        {
+//            Console.WriteLine("Class B");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Base chld = new Child();
+//            chld.Print();
+//        }
+//    }
+//}
+
+//Lambda Expression
+//using System;
+//namespace lambdaExpression
+//{
+//    class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Func<int, int> square = x => x * x;
+//        Console.WriteLine(square(10));
+//    }
+//}
+//}
+
+
+// Access Specifiers
+// -It's a special kind of modifiers using which we can define a scope of a type and it' members.
+// Types:
+//1.private
+//2.internal
+//3.protected
+//4.protected internal
+//5.public
+
+//namespace accessModifiers
+//{
+//    public class Program
+//    {
+//        private void Test1()
+//        {
+//            Console.WriteLine("Private Method.");
+//        }
+//        internal void Test2()
+//        {
+//            Console.WriteLine("Internal Method.");
+//        }
+
+//        protected void Test3()
+//        {
+//            Console.WriteLine("Protected Method");
+//        }
+
+//        protected internal void Test4()
+//        {
+//            Console.WriteLine("Protected INternal Method");
+//        }
+
+//        public void Test5()
+//        {
+//            Console.WriteLine("Public Method");
+//        }
+//        static void Main(string[] args)
+//        {
+//            Program p = new Program();
+//            p.Test1();
+//            p.Test2();
+//            p.Test3();
+//            p.Test4();
+//            p.Test5();
+//        }
+//    }
+
+//    class Two : Program
+//    {
+//        static void Main()
+//        {
+//            Two t = new Two();
+//            t.Test2();
+//            t.Test3();
+//            t.Test4();
+//            t.Test5();
+//        }
+//    }
+//}
+
+
+
+//19.count lowercase and uppercase
+//input = &quot; Hello world!&quot;
+//output = uppercase = 1, lowercase = 9
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "Hello World";
+
+//            int lower = 0;
+//            int upper = 0;
+//            foreach(var i in str)
+//            {
+//                if (char.IsUpper(i))
+//                {
+//                    upper++;
+//                }
+//                if (char.IsLower(i))
+//                {
+//                    lower++;
+//                }
+//            }
+//            Console.WriteLine($"Upper Case : {upper} and Lower Case : {lower}");
+//        }
+//    }
+//}
+
+
+//Encapsulation
 using System;
-namespace methodHiding
+namespace abstraction
 {
 
-    class Base
+    public class rectangleArea
     {
-        public void Print()
+        public double length;
+        public double height;
+
+        public double getArea()
         {
-            Console.WriteLine("Class A");
+            return length * height;
+        }
+
+        public void showDetails()
+        {
+            Console.WriteLine($"Length : {length} | Height : {height}");
+            Console.WriteLine($"Area :" + getArea());
         }
     }
-    class Child : Base
-    {
-        public new void Print()
-        {
-            Console.WriteLine("Class B");
-        }
-    }
+
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            Base chld = new Child();
-            chld.Print();
+            rectangleArea a = new rectangleArea();
+            a.length = 9.0;
+            a.height = 9.0;
+            a.showDetails();
         }
     }
 }
