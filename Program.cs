@@ -447,34 +447,89 @@
 
 
 // 11. Find prime numbers from 1 ....n
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            for (int i = 2; i < n; i++)
+//            {
+//                if (isPrime(i))
+//                {
+//                    Console.WriteLine(i);
+//                }
+//            }
+//        }
+
+//        public static bool isPrime(int n)
+//        {
+//            for (int j = 2; j * j <= n; j++)
+//            {
+//                if (n % j == 0)
+//                {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
+//    }
+//}
+
+
+
+
+// ENums
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public enum shippingMethod
+//        { // Enum declared at the class level
+//            RegularAirMail = 1,
+//            RegisteredAirMail = 2,
+//            Express = 3
+//        }
+
+//        public static void Main(string[] args)
+//        {
+//            var method = shippingMethod.Express;
+//            Console.WriteLine(method);
+//            Console.WriteLine((int)method); //Added to show integer value
+//        }
+//    }
+//}
+
+
+// Method Hiding 
 using System;
-namespace logicals
+namespace methodHiding
 {
+
+    class Base
+    {
+        public void Print()
+        {
+            Console.WriteLine("Class A");
+        }
+    }
+    class Child : Base
+    {
+        public new void Print()
+        {
+            Console.WriteLine("Class B");
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 2; i < n; i++)
-            {
-                if (isPrime(i))
-                {
-                    Console.WriteLine(i);
-                }
-            }
-        }
-
-        public static bool isPrime(int n)
-        {
-            for (int j = 2; j * j <= n; j++)
-            {
-                if (n % j == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
+            Base chld = new Child();
+            chld.Print();
         }
     }
 }
