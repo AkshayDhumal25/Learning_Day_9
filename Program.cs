@@ -185,6 +185,37 @@
 
 // [12, 35, 1, 10, 34, 1, 35],
 // Second Largest Number
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] arr = new int[] { 12, 35, 1, 10, 34, 1, 35 };
+//            int large = 0;
+//            int secLarge = 0;
+
+//            for (int i = 0; i < arr.Length; i++)
+//            {
+//                if (arr[i] > large)
+//                {
+//                    secLarge = large;
+//                    large = arr[i];
+//                }
+//                if (arr[i] < large && arr[i] > secLarge)
+//                {
+//                    secLarge = arr[i];
+//                }
+//            }
+//            Console.WriteLine($"Second Large : {secLarge}");
+//        }
+
+//    }
+//}
+
+
+// 2. WAP to reverse an integer without converting it to a string, without using any built-in methods.
 using System;
 namespace logicals
 {
@@ -192,24 +223,15 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int[] arr = new int[] { 12, 35, 1, 10, 34, 1, 35 };
-            int large = 0;
-            int secLarge = 0;
-
-            for (int i = 0; i < arr.Length; i++)
+            int n = 123;
+            int result = 0;
+            while (n > 0)
             {
-                if (arr[i] > large)
-                {
-                    secLarge = large;
-                    large = arr[i];
-                }
-                if (arr[i] < large && arr[i] > secLarge)
-                {
-                    secLarge = arr[i];
-                }
+                int remainder = n % 10;
+                result = result * 10 + remainder;
+                n = n / 10;
             }
-            Console.WriteLine($"Second Large : {secLarge}");
+            Console.WriteLine(result);
         }
-
     }
 }
