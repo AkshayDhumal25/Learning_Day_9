@@ -411,6 +411,42 @@
 //}
 
 // 8. WAP to print Fibonacci series without recursion.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number to get the Fibonacci Series : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            for (int i = 0; i < n; i++)
+//            {
+//                Console.WriteLine(Fibo(i));
+//            }
+//        }
+//        public static int Fibo(int n)
+//        {
+//            if (n <= 0)
+//            {
+//                return n;
+//            }
+//            int a = 0;
+//            int b = 1;
+//            int c = 0;
+//            for (int i = 2; i < n; i++)
+//            {
+//                c = a + b;
+//                a = b;
+//                b = c;
+//            }
+//            return b;
+//        }
+//    }
+//}
+
+
+// 11. Find prime numbers from 1 ....n
 using System;
 namespace logicals
 {
@@ -418,29 +454,27 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number to get the Fibonacci Series : ");
+            Console.WriteLine("Enter the number : ");
             int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine(Fibo(i));
-            }
-        }
-        public static int Fibo(int n)
-        {
-            if (n <= 0)
-            {
-                return n;
-            }
-            int a = 0;
-            int b = 1;
-            int c = 0;
             for (int i = 2; i < n; i++)
             {
-                c = a + b;
-                a = b;
-                b = c;
+                if (isPrime(i))
+                {
+                    Console.WriteLine(i);
+                }
             }
-            return b;
+        }
+
+        public static bool isPrime(int n)
+        {
+            for (int j = 2; j * j <= n; j++)
+            {
+                if (n % j == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
