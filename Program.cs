@@ -216,6 +216,28 @@
 
 
 // 2. WAP to reverse an integer without converting it to a string, without using any built-in methods.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int n = 123;
+//            int result = 0;
+//            while (n > 0)
+//            {
+//                int remainder = n % 10;
+//                result = result * 10 + remainder;
+//                n = n / 10;
+//            }
+//            Console.WriteLine(result);
+//        }
+//    }
+//}
+
+
+// 2. Swap Values without using any variable a=10, b=12.
 using System;
 namespace logicals
 {
@@ -223,15 +245,14 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int n = 123;
-            int result = 0;
-            while (n > 0)
-            {
-                int remainder = n % 10;
-                result = result * 10 + remainder;
-                n = n / 10;
-            }
-            Console.WriteLine(result);
+            int a = 10;
+            int b = 12;
+
+            a = a + b;//10+12 = 22
+            b = a - b; //22-12 = 10
+            a = a - b; //22 -10 =12
+
+            Console.WriteLine($"A : {a} and B : {b}");
         }
     }
 }
