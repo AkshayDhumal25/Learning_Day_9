@@ -304,22 +304,43 @@
 
 
 // 4. Find the reverse of the string.
+//using System;
+//using System.Linq;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "Akshay";
+//            string reversed = "";
+//            for (int i = str.Length - 1; i >= 0; i--)
+//            {
+//                reversed += str[i];
+//            }
+//            Console.WriteLine($"Reversed String : {reversed} ");
+
+//        }
+//    }
+//}
+
+// 5. WAP to find missing elements from the array?
 using System;
-using System.Linq;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            string str = "Akshay";
-            string reversed = "";
-            for (int i = str.Length - 1; i >= 0; i--)
+            int[] array = new int[] { 1, 2, 3, 5, 6 };
+            int n = array.Length + 1;
+            int ExpectedSum = n * (n + 1) / 2;
+            int currentSum = 0;
+            for (int i = 0; i < array.Length; i++)
             {
-                reversed += str[i];
+                currentSum += array[i];
             }
-            Console.WriteLine($"Reversed String : {reversed} ");
-
+            Console.WriteLine(ExpectedSum - currentSum);
         }
     }
 }
