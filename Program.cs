@@ -259,45 +259,67 @@
 
 
 // 3. Logic for anagram program with its time complexity. (for large strings).
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str1 = "listen";
+//            string str2 = "silent";
+
+//            int[] charCount = new int[256];
+
+//            if (str1.Length != str2.Length)
+//            {
+//                Console.WriteLine("Invalid input.");
+//                return;
+//            }
+//            for (int i = 0; i < str1.Length; i++)
+//            {
+//                charCount[str1[i]]++;
+//                charCount[str2[i]]--;
+//            }
+//            bool isAnagram = true;
+//            for (int i = 0; i < 256; i++)
+//            {
+//                if (charCount[i] != 0)
+//                {
+//                    isAnagram = false;
+//                    break;
+//                }
+//            }
+//            if (isAnagram)
+//            {
+//                Console.WriteLine("Anagram");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Not Anagram");
+//            }
+//        }
+//    }
+//}
+
+
+// 4. Find the reverse of the string.
 using System;
+using System.Linq;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            string str1 = "listen";
-            string str2 = "silent";
+            string str = "Akshay";
+            string reversed = "";
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                reversed += str[i];
+            }
+            Console.WriteLine($"Reversed String : {reversed} ");
 
-            int[] charCount = new int[256];
-
-            if (str1.Length != str2.Length)
-            {
-                Console.WriteLine("Invalid input.");
-                return;
-            }
-            for (int i = 0; i < str1.Length; i++)
-            {
-                charCount[str1[i]]++;
-                charCount[str2[i]]--;
-            }
-            bool isAnagram = true;
-            for (int i = 0; i < 256; i++)
-            {
-                if (charCount[i] != 0)
-                {
-                    isAnagram = false;
-                    break;
-                }
-            }
-            if (isAnagram)
-            {
-                Console.WriteLine("Anagram");
-            }
-            else
-            {
-                Console.WriteLine("Not Anagram");
-            }
         }
     }
 }
