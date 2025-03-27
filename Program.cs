@@ -55,59 +55,94 @@
 
 
 // Encapsulation using Properties
+//using System;
+//namespace EncapsulationWithProperties
+//{
+//    public class Person
+//    {
+//        private string name;
+//        private int age;
+//        private DateTime createdAt;
+
+
+//        public string Name
+//        {
+//            get { return name; }
+//            set { name = value; }
+//        }
+
+//        public int Age
+//        {
+//            get { return age; }
+//            set 
+//            {
+//                if(value  > 0 && value <= 150)
+//                {
+//                    this.age = value;
+//                }
+//                else
+//                {
+//                    throw new Exception("Invalid Age");
+//                }
+//            }
+//        }
+
+//        public DateTime CreatedAt
+//        {
+//            get { return createdAt; }
+//        }
+
+
+//        public Person()
+//        {
+//            this.createdAt = DateTime.Now;
+//        }
+
+//    }
+
+//    public class Program
+//    {
+//        static void Main()
+//        {
+//            Person person = new Person();
+//            person.Name = "Akshay";
+//            person.Age = 21;
+//            Console.WriteLine($"Name is {person.Name} and age is {person.Age}");
+//        }
+//    }
+//}
+
+// Diamond Problem
 using System;
-namespace EncapsulationWithProperties
+namespace diamondProblem
 {
-    public class Person
+
+    class A
     {
-        private string name;
-        private int age;
-        private DateTime createdAt;
-
-
-        public string Name
+        public virtual void print()
         {
-            get { return name; }
-            set { name = value; }
+            Console.WriteLine("Class A");
         }
+    }
+    class B : A
+    {
 
-        public int Age
-        {
-            get { return age; }
-            set 
-            {
-                if(value  > 0 && value <= 150)
-                {
-                    this.age = value;
-                }
-                else
-                {
-                    throw new Exception("Invalid Age");
-                }
-            }
-        }
-        
-        public DateTime CreatedAt
-        {
-            get { return createdAt; }
-        }
-
-        
-        public Person()
-        {
-            this.createdAt = DateTime.Now;
-        }
+    }
+    
+    class C : B
+    {
 
     }
 
-    public class Program
+    class D : B, C // Here the class can't support for the multiple inheritance 
     {
-        static void Main()
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
         {
-            Person person = new Person();
-            person.Name = "Akshay";
-            person.Age = 21;
-            Console.WriteLine($"Name is {person.Name} and age is {person.Age}");
+
         }
     }
 }
