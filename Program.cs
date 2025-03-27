@@ -113,36 +113,103 @@
 //}
 
 // Diamond Problem
+//using System;
+//namespace diamondProblem
+//{
+
+//    class A
+//    {
+//        public virtual void print()
+//        {
+//            Console.WriteLine("Class A");
+//        }
+//    }
+//    class B : A
+//    {
+
+//    }
+
+//    class C : A
+//    {
+
+//    }
+
+//    class D : B, C // Here the class can't support for the multiple inheritance 
+//    {
+
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+
+//        }
+//    }
+//}
+
+
+// Solution of Diamond Problem
+//using System;
+//using System.Runtime.InteropServices;
+//namespace solutionOfDiamondProblem
+//{
+//    interface A
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Interface A");
+//        }
+//    }
+
+//    interface B : A { }
+//    interface C : A { }
+
+//    class D : B, C 
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Class D");
+//        }
+//    }
+
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            D d = new D();
+//            d.print();
+//        }
+//    }
+//}
+
+
+// [12, 35, 1, 10, 34, 1, 35],
+// Second Largest Number
 using System;
-namespace diamondProblem
+namespace logicals
 {
-
-    class A
-    {
-        public virtual void print()
-        {
-            Console.WriteLine("Class A");
-        }
-    }
-    class B : A
-    {
-
-    }
-    
-    class C : B
-    {
-
-    }
-
-    class D : B, C // Here the class can't support for the multiple inheritance 
-    {
-
-    }
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            int[] arr = new int[] { 12, 35, 1, 10, 34, 1, 35 };
+            int large = 0;
+            int secLarge = 0;
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > large)
+                {
+                    secLarge = large;
+                    large = arr[i];
+                }
+                if (arr[i] < large && arr[i] > secLarge)
+                {
+                    secLarge = arr[i];
+                }
+            }
+            Console.WriteLine($"Second Large : {secLarge}");
         }
+
     }
 }
